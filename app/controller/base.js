@@ -27,6 +27,7 @@ class BaseController extends Controller {
         const { ctx, app, service } = this;
         let reqBody = ctx.request.body; // 请求体
         let result = await service[this.entity].create(reqBody);
+        
         result.affectedRows > 0
             ? this.success("创建成功")
             : this.error("创建失败"); // affectedRows影响到行数
