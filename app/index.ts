@@ -1,11 +1,13 @@
 import Koa from "koa";
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 import router from "./router";
 import { Server } from "http";
+import AccessLogMiddleware from "../app/middleware/AccessLogMiddleware";
 
-dotenv.config()
+dotenv.config();
 
 const app = new Koa();
+app.use(AccessLogMiddleware)
 app.use(router.routes());
 
 const run = (port: any): Server => {
