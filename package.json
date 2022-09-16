@@ -1,53 +1,27 @@
 {
   "name": "code-editor-serve",
   "version": "1.0.0",
-  "description": "code editor后端服务",
-  "private": true,
-  "egg": {
-    "declarations": true
-  },
-  "dependencies": {
-    "egg": "^2",
-    "egg-cors": "^2.2.3",
-    "egg-mysql": "^3.1.1",
-    "egg-scripts": "^2",
-    "ejs": "^3.1.8",
-    "prettier": "^2.7.1",
-    "vue": "^3.2.37",
-    "vue-server-renderer": "^2.7.8"
-  },
-  "devDependencies": {
-    "autod": "^3",
-    "autod-egg": "^1",
-    "egg-bin": "^4",
-    "egg-ci": "^2",
-    "egg-mock": "^4",
-    "eslint": "^8",
-    "eslint-config-egg": "^12"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
+  "description": "",
+  "main": "index.ts",
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-code-editor-serve",
-    "stop": "egg-scripts stop --title=egg-server-code-editor-serve",
-    "dev": "egg-bin dev",
-    "debug": "egg-bin debug",
-    "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
-    "cov": "egg-bin cov",
-    "lint": "eslint .",
-    "ci": "npm run lint && npm run cov",
-    "autod": "autod"
-  },
-  "ci": {
-    "version": "16",
-    "type": "github"
+    "dev": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@gitee.com:wendZzoo/code-editor-serve.git"
   },
-  "author": "wendZzoo",
-  "license": "MIT"
+  "author": "zuowendong",
+  "license": "ISC",
+  "dependencies": {
+    "@types/koa": "^2.13.5",
+    "@types/koa-router": "^7.4.4",
+    "koa": "^2.13.4",
+    "koa-router": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  }
 }
