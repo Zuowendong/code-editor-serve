@@ -1,2 +1,4 @@
-import run from './app'
-run(88)
+import run from "./app";
+import config from "./app/config";
+
+run(config.server.port);
