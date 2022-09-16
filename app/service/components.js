@@ -25,7 +25,6 @@ class ComponentsService extends BaseService {
         try {
             await conn.query(`DELETE FROM components`);
             await conn.query(`ALTER TABLE components auto_increment=0`);
-
             await conn.insert("components", {
                 data,
             });
@@ -35,14 +34,6 @@ class ComponentsService extends BaseService {
             await conn.rollback();
         }
         return success;
-    }
-
-    // 设置代码模板
-    async getCodeTemp() {
-        const { app, service, ctx } = this;
-        let result = await app.mysql.select("components");
-        let res = templateHandle(result)
-        return res;
     }
 }
 
