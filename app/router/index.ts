@@ -3,6 +3,6 @@ import indexController from "../controller/indexController";
 
 const router = new koaRouter({ prefix: "/api" });
 
-router.get('/', indexController.index)
+router.get('/createScene', indexController.index)
 
 export default router;

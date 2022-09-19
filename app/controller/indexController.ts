@@ -1,8 +1,10 @@
 import { Context } from "koa";
+import usersService from "../service/usersService";
 
 class IndexController {
 	async index(ctx: Context) {
-		ctx.body = 'hello koa';
+		const res = await usersService.createUser({ userName: "Jane", password: "11111111111" });
+		ctx.body = JSON.stringify(res, null, 4);
 	}
 }
 
