@@ -1,4 +1,4 @@
-import { users } from "../db/model/users";
+import { users } from "../model/users";
 
 class UsersService {
 	async createUser(param: any) {
